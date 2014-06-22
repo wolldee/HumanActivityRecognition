@@ -51,8 +51,8 @@ run_analysis <- function (directory = getwd()){
     
     av_by_act_N_subj <- dcast(molt_test_N_Train, subject + Activity ~ variable, mean, margins=names(test_N_Train)[1:561])
     ## Writing the new data set to a csv file
-    filename <- paste(directory, "/av_var_by_act_N_sub.csv", sep="")
-    write.csv(av_by_act_N_subj, file=filename, quote=TRUE, dec=".", row.names=TRUE,col.names=TRUE)
+    filename <- paste(directory, "/av_var_by_act_N_sub.txt", sep="")
+    write.table(av_by_act_N_subj, file=filename, quote=TRUE, sep=",", dec=".", row.names=TRUE, col.names = TRUE)
     #returning the new data set
     av_by_act_N_subj
 }
