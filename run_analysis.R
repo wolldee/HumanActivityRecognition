@@ -1,11 +1,11 @@
-## Starting by getting the working directory
-    
+## can be turned into a function by un-commenting the next line and the last one the parameter
 
+##run_analysis <- function (directory = getwd()){
+## Starting by getting the working directory
     directory = getwd()
-    
     if(!library(reshape2, logical.return=TRUE)){
         print("reshape2 package is needed to continue.")
-        return
+        stop()
     }
     
     dataDir <- "/UCI HAR Dataset"
@@ -60,3 +60,4 @@
     rm(molt_test_N_Train,trainData,testData,testLab,subjTest,trainLab,subjTrain,features,activLab)
     #returning the new data set
     av_by_act_N_subj
+##}
