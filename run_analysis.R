@@ -1,6 +1,7 @@
 ## can be turned into a function by un-commenting the next line and the last one the parameter
 
 ##run_analysis <- function (directory = getwd()){
+
 ## Starting by getting the working directory
     directory = getwd()
     if(!library(reshape2, logical.return=TRUE)){
@@ -11,6 +12,7 @@
     dataDir <- "/UCI HAR Dataset"
     trainDataDir <- "/train"
     testDataDir <- "/test"
+    
     ## Loading necessary files
     
     features <- read.table(paste(directory, dataDir, "/features.txt", sep=""))
@@ -56,7 +58,7 @@
     ## Writing the new data set to a csv file
     filename <- paste(directory, "/av_var_by_act_N_sub.txt", sep="")
     write.table(av_by_act_N_subj, file=filename, quote=TRUE, sep=",", dec=".", row.names=TRUE, col.names = TRUE)
-    ## removing temporary variables
+    ## removing temporary variables for memory efficiency
     rm(molt_test_N_Train,trainData,testData,testLab,subjTest,trainLab,subjTrain,features,activLab)
     #returning the new data set
     av_by_act_N_subj

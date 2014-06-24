@@ -8,7 +8,7 @@ Getting and cleaning data Project
 
 R script getting and cleaning data from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-         - USAGE
+         - USAGE -
 
 The difault directory is the WD. the folder containing the data set should not be renamed and should be in the working directory.
 
