@@ -1,4 +1,7 @@
-run_analysis <- function (directory = getwd()){
+## Starting by getting the working directory
+    
+
+    directory = getwd()
     
     if(!library(reshape2, logical.return=TRUE)){
         print("reshape2 package is needed to continue.")
@@ -53,6 +56,7 @@ run_analysis <- function (directory = getwd()){
     ## Writing the new data set to a csv file
     filename <- paste(directory, "/av_var_by_act_N_sub.txt", sep="")
     write.table(av_by_act_N_subj, file=filename, quote=TRUE, sep=",", dec=".", row.names=TRUE, col.names = TRUE)
+    ## removing temporary variables
+    rm(molt_test_N_Train,trainData,testData,testLab,subjTest,trainLab,subjTrain,features,activLab)
     #returning the new data set
     av_by_act_N_subj
-}
